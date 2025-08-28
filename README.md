@@ -52,8 +52,9 @@ from feature_schema import FeatureSchema
 model = LogisticRegression()
 model.fit(X, y)
 
-# Create feature schema
-fs = FeatureSchema(df)
+# Create feature schema using only the input features (X)
+fs = FeatureSchema(X)
+# Note : Do not include the y variable in the feature-schema
 
 # Bundle model and schema into a pickle
 package = {
