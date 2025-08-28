@@ -11,7 +11,7 @@ if uploaded_file is not None:
     package = pickle.load(uploaded_file)
     model = package["model"]
     schema = package["schema"]
-    st.success("✅ Model loaded successfully!")
+    st.success("Model loaded successfully!")
 
     st.subheader("Enter Input Features:")
 
@@ -52,9 +52,9 @@ if uploaded_file is not None:
                 st.warning(f'The prediction is {probability[0][0]*100:.2f}% False : {prediction}.')
             else:
                 st.success(f"The prediction is {probability[0][1]*100:.2f}% True : {prediction}.")
-                
+
         except Exception as e:
-            st.error(f"⚠️ Error during prediction: {e}")
+            st.error(f" Error during prediction: {e}")
 
 else:
-    st.info("👆 Upload a pickle file to continue.")
+    st.info("Upload a pickle file to continue.")
