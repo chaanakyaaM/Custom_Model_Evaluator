@@ -1,0 +1,11 @@
+[project]
+name = "custom-ml"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "scikit-learn>=1.7.1",
+    "streamlit>=1.48.1",
+    "numpy>=2.3.1"
+]
