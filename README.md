@@ -1,4 +1,4 @@
-# Custom ML Model Predictor
+# Custom ML Model Evaluator
 
 **Custom Model Evaluator** is a web application that allows users to **upload their own trained machine learning models** (in ```.pkl``` or ```.pickle``` format) along with a dynamic input schema. The app automatically generates an input form based on the model's expected features, enabling users to test predictions with real-time input and view the model's output probabilities. Ideal for quick validation, demoing, or interactive evaluation of custom ML models — without writing extra code.
 
