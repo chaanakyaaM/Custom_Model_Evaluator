@@ -1,13 +1,13 @@
 # Custom ML Model Evaluator
 
-**Custom Model Evaluator** is a web application that allows users to **upload their own trained machine learning models** (in ```.pkl``` or ```.pickle``` format) along with a dynamic input schema. The app automatically generates an input form based on the model's expected features, enabling users to test predictions with real-time input and view the model's output probabilities. Ideal for quick validation, demoing, or interactive evaluation of custom ML models — without writing extra code.
+**Custom Model Evaluator** is a web application that allows users to **upload their own pre-trained binary classification machine learning models** (in ```.pkl``` or ```.pickle``` format) along with a dynamic input schema. The app automatically generates an input form based on the model's expected features, enabling users to test predictions with real-time input and view the model's output probabilities. Ideal for quick validation, demoing, or interactive evaluation of custom ML models — without writing extra code.
 
 ## Features
  
 - Dynamically generates input fields for each feature.  
-- Supports numeric (`int`, `float`) and string features.  
+- Supports numeric (`int`, `float`) and `string` features.  
 - Display prediction and probabilities interactively.  
-- Easy to extend for any ML model.
+- Easy to extend for binary classification ML model.
 
 ## Installation
 
@@ -32,10 +32,13 @@ streamlit run main.py
 
 ## Usage
 
-### 1. Prepare your ML Model and Feature Schema (IMPORTANT)
+### 1. IMPORTANT : Prepare your ML Model and Feature Schema 
 
-- You need to bundle your trained model with feature schema into a pickle file.
-- You can use [feature-schema](https://pypi.org/project/feature-schema) package to get the feature schema.
+Your model file must include both:
+- A trained binary classification model.
+- A feature schema describing the model’s expected input features.
+
+You can use [feature-schema](https://pypi.org/project/feature-schema) package to get the feature schema.
 
 Here’s an example using feature_schema for creating pickle ```(.plk)``` file:
 
@@ -68,15 +71,14 @@ with open("model_with_schema.pkl", "wb") as f:
 - Open the Streamlit app.
 - Upload model_with_schema.pkl.
 - Enter feature values in the dynamically generated inputs.
-- Click Predict to evaluate the result along with probabilities.
+- Click "Predict" to evaluate result along with probabilities
 
-> Try uploading the sample ```model_with_schema.pkl``` model for testing.
+> Try uploading sample model ```model_with_schema.pkl``` for quick testing.
 
 ## Why Use This App?
 
 - No more hardcoding feature names, types, or ranges.
-- Works with any ML model that follows scikit-learn conventions.
+- Works with only binary classification ML model that follows scikit-learn conventions.
 - Automatically validates input based on feature schema.
-- Saves time when deploying models interactively in Streamlit.
-- Easy for model evaluations.
-
+- Instant predictions with probability insights.
+- Perfect for demos and quick model evaluations.
